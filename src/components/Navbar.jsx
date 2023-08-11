@@ -5,7 +5,9 @@ function Navbar() {
       <div className="navbarSearchBar">
         <input type="text" placeholder="Search" />
       </div>
-      <div className="navbarCart">🛒</div>
+      <div className="navbarCart">
+        <img src="src/assets/icons8-cart-30.png" alt="Cart" />
+      </div>
     </div>
   );
 }

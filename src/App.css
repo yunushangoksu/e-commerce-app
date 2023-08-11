@@ -18,6 +18,7 @@
   width: 100%;
 }
 .navbarLogo {
+  font-size: 48px;
   padding-left: 10px;
 }
 .navbarSearchBar input {
@@ -38,7 +39,12 @@
   width: 200px;
 }
 .navbarCart {
-  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 20px;
+  background-color: #c0c7e07c;
 }
 /* Category */
 .categoryWrapper {
@@ -59,10 +65,30 @@
   font-size: 2rem;
 }
 .categoryRow {
-  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.1rem;
+}
+.categoryRow:hover .categorySvg {
+  transition: 0.3s;
+  filter: grayscale(1) invert(1);
+  background-color: black;
+}
+.categoryRow:not(:hover) .categorySvg {
+  transition: 0.3s;
+  background-color: white;
+  filter: invert(100%);
+}
+.categoryRow img {
+  width: 30px;
+  height: auto;
+  padding: 5px;
+  border-radius: 10px;
 }
 /* Store Page */
 .shopWrapper {
+  padding: 0px 20px 0 20px;
   width: 100%;
 }
 .shopHeader {
@@ -74,22 +100,31 @@
   display: grid;
   width: 100%;
   gap: 30px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 /* Card */
 .cardWrapper {
-  max-width: 340px;
+  max-width: 700px;
   color: #050609;
   background-color: #f1f7ed;
   box-shadow: 0.5rem 0.5rem 0 0 #272b38;
   border-radius: 1rem;
 }
+.cardWrapper:hover {
+  transition: 0.3s;
+  transform: scale(1.1);
+}
+.cardWrapper:not(:hover) {
+  transition: 0.3s;
+  transform: scale(1);
+}
 .cardImage {
   position: relative;
-  width: 100%;
+  max-width: 700px;
 }
 .cardImage img {
-  max-width: 340px;
+  width: 100%;
+  max-width: 700px;
   height: 200px;
   object-fit: cover;
   aspect-ratio: 1.7 / 1;
@@ -111,10 +146,13 @@
   background-color: rgba(138, 218, 20);
   border-radius: 1rem;
 }
+.cardName {
+  font-size: 22px;
+}
 .cardDescriptionWrapper {
   display: flex;
   height: 100px;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   background-color: #f1f7ed;
   border-radius: 0 0 1rem 1rem;
@@ -122,8 +160,8 @@
 .cardDescriptionWrapper > div {
   padding: 10px;
 }
-.cardDescriptionLeft {
+.cardDescriptionTop {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
 }
