@@ -46,6 +46,7 @@
   padding-top: 20px;
   gap: 20px;
   flex-direction: column;
+  flex-shrink: 0;
   width: 250px;
 }
 .categoryBlock {
@@ -62,6 +63,7 @@
 }
 /* Store Page */
 .shopWrapper {
+  width: 100%;
 }
 .shopHeader {
   font-size: 72px;
@@ -70,12 +72,13 @@
 }
 .shopSection {
   display: grid;
-  justify-content: space-evenly;
-  gap: 20px;
-  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
 }
+/* Card */
 .cardWrapper {
-  max-width: 320px;
+  max-width: 340px;
   color: #050609;
   background-color: #f1f7ed;
   box-shadow: 0.5rem 0.5rem 0 0 #272b38;
@@ -86,7 +89,7 @@
   width: 100%;
 }
 .cardImage img {
-  max-width: 320px;
+  max-width: 340px;
   height: 200px;
   object-fit: cover;
   aspect-ratio: 1.7 / 1;
@@ -105,7 +108,7 @@
   justify-content: center;
   width: 50px;
   height: 50px;
-  background-color: rgba(138, 218, 20, 0.473);
+  background-color: rgba(138, 218, 20);
   border-radius: 1rem;
 }
 .cardDescriptionWrapper {
