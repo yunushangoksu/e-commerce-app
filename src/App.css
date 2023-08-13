@@ -71,15 +71,15 @@
   font-size: 1.1rem;
 }
 .categoryRow:hover .categorySvg {
-  transition: 0.3s;
-  filter: grayscale(1) invert(1);
-  background-color: black;
+  transition: 0.5s;
+  filter: grayscale(1) invert(0);
 }
 .categoryRow:not(:hover) .categorySvg {
-  transition: 0.3s;
+  transition: 0.5s;
   background-color: white;
   filter: invert(100%);
 }
+
 .categoryRow img {
   width: 30px;
   height: auto;
