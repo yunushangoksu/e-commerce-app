@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
     <div className="navbarWrapper">
-      <div className="navbarLogo">SHOP</div>
+      <Link className="navbarLogo" to="/">
+        SHOP
+      </Link>
       <div className="navbarSearchBar">
         <input type="text" placeholder="Search" />
       </div>

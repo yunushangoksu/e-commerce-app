@@ -1,16 +1,12 @@
 import "./App.css";
-import StorePage from "./pages/StorePage";
+import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
-import Category from "./components/Category";
 
 function App() {
   return (
     <div className="wrapper">
       <Navbar />
-      <div className="subWrapper">
-        <Category />
-        <StorePage />
-      </div>
+      <HomePage />
     </div>
   );
 }

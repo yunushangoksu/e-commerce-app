@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 function Card({ games }) {
+  const [cardId, setCardId] = useState();
+
   return (
     <div className="cardWrapper">
       {/*       <div className="cardImage">

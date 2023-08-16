@@ -16,10 +16,14 @@
   justify-content: space-between;
   height: 75px;
   width: 100%;
+  font-family: "Roboto", sans-serif;
 }
+
 .navbarLogo {
   font-size: 48px;
   padding-left: 10px;
+  text-decoration: none;
+  color: black;
 }
 .navbarSearchBar input {
   width: 200px;
@@ -45,6 +49,31 @@
   border-radius: 10px;
   margin-right: 20px;
   background-color: #c0c7e07c;
+}
+/* Home Page */
+.homeWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 70vh;
+  justify-content: space-between;
+  margin: 0 3em 0 3em;
+}
+.homeNavbarWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  font-size: 2em;
+  background-color: antiquewhite;
+  padding: 20px;
+  border-radius: 1em;
+}
+.homeNavbarRow {
+  padding: 10px;
+}
+.homeNavbarRow:hover {
+  background-color: rgb(126, 107, 107);
+  border-radius: 10px;
 }
 /* Category */
 .categoryWrapper {
@@ -87,6 +116,9 @@
   border-radius: 10px;
 }
 /* Store Page */
+.storePagesWrapper {
+  font-family: "Roboto", sans-serif;
+}
 .shopWrapper {
   padding: 0px 20px 0 20px;
   width: 100%;
@@ -107,8 +139,9 @@
   max-width: 700px;
   color: #050609;
   background-color: #f1f7ed;
-  box-shadow: 0.5rem 0.5rem 0 0 #272b38;
-  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 0 0 #555968;
+  border: solid black 5px;
+  border-radius: 1.4em;
 }
 .cardWrapper:hover {
   transition: 0.3s;
@@ -128,7 +161,7 @@
   height: 200px;
   object-fit: cover;
   aspect-ratio: 1.7 / 1;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 1em 1em 0 0;
 }
 .cardAddButton {
   cursor: pointer;
