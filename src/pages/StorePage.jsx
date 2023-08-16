@@ -1,6 +1,6 @@
 import Category from "../components/Category";
 import Navbar from "../components/Navbar";
-import StorePage from "./StorePage";
+import GameList from "../components/GameList";
 
 function StorePages() {
   return (
@@ -8,7 +8,7 @@ function StorePages() {
       <Navbar />
       <div className="subWrapper">
         <Category />
-        <StorePage />
+        <GameList />
       </div>
     </div>
   );
