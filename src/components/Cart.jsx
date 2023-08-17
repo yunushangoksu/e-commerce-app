@@ -1,10 +1,15 @@
+import { useState } from "react";
+
 function Cart() {
+  const [cart, setCart] = useState([]);
+
   return (
     <div className="cartWrapper">
       <div className="cartTopRow">
         <div>3 Games</div>
         <div>Clear</div>
       </div>
+      
       <div className="cartItemWrapper">
         <div className="cardItemLeft">
           <img src="src/assets/borderlands3.jpg" alt="foto" />
