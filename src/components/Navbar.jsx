@@ -9,7 +9,13 @@ function Navbar() {
       <div className="navbarSearchBar">
         <input type="text" placeholder="Search" />
       </div>
-      <div className="navbarCart">
+      <div
+        className="navbarCart"
+        onClick={() => {
+          document.querySelector(".cartWrapper").style.marginRight = "0";
+          document.querySelector(".cartOutside").style.right = "0";
+        }}
+      >
         <img src="src/assets/icons8-cart-30.png" alt="Cart" />
       </div>
     </div>
