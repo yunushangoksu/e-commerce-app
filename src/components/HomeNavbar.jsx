@@ -1,14 +1,9 @@
 import { Link } from "react-router-dom";
 
-function HomeNavbar({ cartData, cartSetter }) {
+function HomeNavbar() {
   return (
     <div className="homeNavbarWrapper">
-      <Link
-        to="store"
-        className="homeNavbarRow"
-        cartData={cartData}
-        cartSetter={cartSetter}
-      >
+      <Link to="store" className="homeNavbarRow">
         Store
       </Link>
       <div className="homeNavbarRow">Last 30 days</div>
@@ -20,5 +15,3 @@ function HomeNavbar({ cartData, cartSetter }) {
 }
 
 export default HomeNavbar;
-
-LOCAL STORAGE

@@ -1,30 +1,15 @@
-<<<<<<< Updated upstream
 import { useState, useEffect } from "react";
 
 function Cart(data) {
-  const [cart, setCart] = useState(
-    JSON.parse(localStorage.getItem("cartItems"))
-  );
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cart));
   }, [cart]);
-=======
-import CartItem from "./CartItem";
->>>>>>> Stashed changes
 
-function Cart({ cartData, cartSetter }) {
   return (
     <div className="cartWrapper">
-      <div
-        className="cartOutside"
-        onClick={() => {
-          document.querySelector(".cartWrapper").style.marginRight = "-22em";
-          document.querySelector(".cartOutside").style.right = "-100vw";
-        }}
-      ></div>
       <div className="cartTopRow">
-<<<<<<< Updated upstream
         <div>{data.length} Games</div>
         <div>Clear</div>
       </div>
@@ -42,14 +27,6 @@ function Cart({ cartData, cartSetter }) {
         </div>
       </div>
       <button onClick={() => setCart([...cart, "Deneme"])}>Hebe</button>
-=======
-        <div>{cartData.length} Games</div>
-        <div>Clear</div>
-      </div>
-      {cartData.map((data, index) => (
-        <CartItem data={cartData} key={index} order={index} />
-      ))}
->>>>>>> Stashed changes
     </div>
   );
 }
