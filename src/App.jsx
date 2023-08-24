@@ -14,6 +14,7 @@ function App() {
         onClick={() => {
           document.querySelector(".cartWrapper").style.marginRight = "-22em";
           document.querySelector(".cartOutside").style.right = "-100vw";
+          document.querySelector("body").style.overflowY = "scroll";
         }}
       ></div>
     </div>

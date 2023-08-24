@@ -1,32 +1,33 @@
-import { useState, useEffect } from "react";
-
-function Cart(data) {
-  const [cart, setCart] = useState([]);
-
-  useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cart));
-  }, [cart]);
+function Cart() {
+  let currentCart = JSON.parse(localStorage.getItem("cartItems"));
 
   return (
     <div className="cartWrapper">
       <div className="cartTopRow">
-        <div>{data.length} Games</div>
-        <div>Clear</div>
+        <div>{currentCart ? currentCart.length : ""} Games</div>
+        <div
+          onClick={() => localStorage.setItem("cartItems", JSON.stringify([]))}
+        >
+          Clear
+        </div>
       </div>
 
-      <div className="cartItemWrapper">
-        <div className="cardItemLeft">
-          <img src="src/assets/borderlands3.jpg" alt="foto" />
-        </div>
-        <div className="cartItemRight">
-          <div className="cartItemDelete">X</div>
-          <div className="cartItemRight2">
-            <div className="cartItemName">{data.name}</div>
-            <div>19.98</div>
-          </div>
-        </div>
-      </div>
-      <button onClick={() => setCart([...cart, "Deneme"])}>Hebe</button>
+      {currentCart
+        ? currentCart.map((game, index) => (
+            <div className="cartItemWrapper" key={index}>
+              <div className="cardItemLeft">
+                <img src={game.background_image} alt={game.name} />
+              </div>
+              <div className="cartItemRight">
+                <div className="cartItemDelete">X</div>
+                <div className="cartItemRight2">
+                  <div className="cartItemName">{game.name}</div>
+                  <div>19.98</div>
+                </div>
+              </div>
+            </div>
+          ))
+        : []}
     </div>
   );
 }

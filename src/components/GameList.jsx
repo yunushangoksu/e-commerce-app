@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
 
-function GameList() {
+function GameList({ cart, setCart }) {
   const [games, setGames] = useState([]);
 
   const fetchData = async () => {
@@ -21,7 +21,7 @@ function GameList() {
       <div className="shopHeader">Best of the year</div>
       <div className="shopSection">
         {games.map((data, index) => (
-          <Card games={data} key={index} />
+          <Card games={data} key={index} cart={cart} setCart={setCart} />
         ))}
       </div>
     </div>
