@@ -1,4 +1,4 @@
-function Card({ games, cart, setCart, useForceUpdate }) {
+function Card({ games, cart, setCart }) {
   return (
     <div className="cardWrapper">
       <div className="cardImage">
@@ -7,7 +7,6 @@ function Card({ games, cart, setCart, useForceUpdate }) {
           className="cardAddButton"
           onClick={() => {
             setCart([...cart, games]);
-            console.log(cart);
           }}
         >
           🛒

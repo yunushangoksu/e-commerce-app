@@ -13,7 +13,8 @@ function StorePages() {
 
   return (
     <div>
-      <Cart cart={cart} setCartData={setCart} />
+      <Cart cart={cart} setCart={setCart} />
+
       <div
         className="cartOutside"
         onClick={() => {

@@ -1,19 +1,15 @@
-function Cart() {
+function Cart({ cart, setCart }) {
   let currentCart = JSON.parse(localStorage.getItem("cartItems"));
 
   return (
     <div className="cartWrapper">
       <div className="cartTopRow">
         <div>{currentCart ? currentCart.length : ""} Games</div>
-        <div
-          onClick={() => localStorage.setItem("cartItems", JSON.stringify([]))}
-        >
-          Clear
-        </div>
+        <div onClick={() => setCart([])}>Clear</div>
       </div>
 
-      {currentCart
-        ? currentCart.map((game, index) => (
+      {cart
+        ? cart.map((game, index) => (
             <div className="cartItemWrapper" key={index}>
               <div className="cardItemLeft">
                 <img src={game.background_image} alt={game.name} />

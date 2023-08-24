@@ -21,7 +21,12 @@ function GameList({ cart, setCart }) {
       <div className="shopHeader">Best of the year</div>
       <div className="shopSection">
         {games.map((data, index) => (
-          <Card games={data} key={index} cart={cart} setCart={setCart} />
+          <Card
+            games={data}
+            key={index}
+            cart={cart}
+            setCart={setCart}
+          />
         ))}
       </div>
     </div>
