@@ -3,17 +3,10 @@ import Navbar from "../components/Navbar";
 import GameList from "../components/GameList";
 import Cart from "../components/Cart";
 
-function StorePages() {
+function StorePages({ cartData, cartSetter }) {
   return (
     <div>
-      <Cart />
-      <div
-        className="cartOutside"
-        onClick={() => {
-          document.querySelector(".cartWrapper").style.marginRight = "-22em";
-          document.querySelector(".cartOutside").style.right = "-100vw";
-        }}
-      ></div>
+      <Cart cartData={cartData} cartSetter={cartSetter} />
 
       <div className="storePagesWrapper">
         <Navbar />
