@@ -29,6 +29,7 @@ body {
   text-decoration: none;
   color: black;
 }
+
 .navbarSearchBar input {
   width: 200px;
   height: 30px;
@@ -41,10 +42,13 @@ body {
   transition: 0.3s;
   width: 400px;
 }
-.navbarSearchBar input:not(focus) {
+.navbarSearchBar input:not(:focus) {
   outline: 0;
   transition: 0.3s;
   width: 200px;
+}
+.searchBarInput:not(:onfocus) .searchResults {
+  display: none;
 }
 .navbarCart {
   display: flex;
@@ -53,6 +57,26 @@ body {
   border-radius: 10px;
   margin-right: 20px;
   background-color: #c0c7e07c;
+}
+.searchResults {
+  display: none;
+  margin-top: 5px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-direction: row;
+  position: absolute;
+  background-color: white;
+  border: solid black 3px;
+  border-radius: 20px;
+  padding: 10px;
+  width: 390px;
+}
+.searchResultsItemWrapper {
+  height: 25px;
+}
+.searchResultsItemWrapperdItemLeft img {
+  width: 100px;
 }
 /* Home Page */
 .homeWrapper {

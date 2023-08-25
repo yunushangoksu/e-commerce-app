@@ -9,20 +9,25 @@ function Navbar() {
     setSearchTerm(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let slug = searchTerm.split(" ").join("-").toLocaleLowerCase();
-
     setResults([]);
-    fetch(
+    await fetch(
       `https://api.rawg.io/api/games/${slug}?key=758f797c3db7418e8ce75ca4625d31f6`
     )
-      .then((resp) => resp.json())
-      .then(({ results }) => {
-        results === undefined ? alert("not found") : setResults(results);
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          console.log("not found");
+        }
+      })
+      .then((data) => {
+        setResults(data);
+        document.querySelector(".searchResults").style.display = "flex";
       });
     setSearchTerm("");
-    console.log(results);
   };
 
   return (
@@ -37,9 +42,35 @@ function Navbar() {
           placeholder="Search"
           value={searchTerm}
           onChange={handleChange}
+          onBlur={() =>
+            (document.querySelector(".searchResults").style.display = "none")
+          }
+          className="searchBarInput"
         />
+        {results ? (
+          <div className="searchResults">
+            <div className="searchResultsItemWrapperdItemLeft">
+              <img src={results.background_image} alt={results.name} />
+            </div>
+            <div className="searchResultsItemRight">
+              <div className="searchResultsItemRight2">
+                <div className="searchResultsItemName">{results.name}</div>
+                <div>19.98$</div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="searchResults">
+            <div className="searchResultsItemRight">
+              <div className="searchResultsItemRight2">
+                <div className="searchResultsItemName">
+                  {"Nothing found :("}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </form>
-
       <div
         className="navbarCart"
         onClick={() => {
