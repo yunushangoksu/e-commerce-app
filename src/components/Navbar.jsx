@@ -42,13 +42,17 @@ function Navbar() {
           placeholder="Search"
           value={searchTerm}
           onChange={handleChange}
-          onBlur={() =>
+          /*           onBlur={() =>
             (document.querySelector(".searchResults").style.display = "none")
-          }
+          } */
           className="searchBarInput"
         />
         {results ? (
-          <div className="searchResults">
+          <Link
+            to={`/game/${results.name}`}
+            state={{ results: results }}
+            className="searchResults"
+          >
             <div className="searchResultsItemWrapperdItemLeft">
               <img src={results.background_image} alt={results.name} />
             </div>
@@ -58,7 +62,7 @@ function Navbar() {
                 <div>19.98$</div>
               </div>
             </div>
-          </div>
+          </Link>
         ) : (
           <div className="searchResults">
             <div className="searchResultsItemRight">
