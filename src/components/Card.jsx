@@ -1,8 +1,13 @@
+import { Link } from "react-router-dom";
+
 function Card({ games, cart, setCart }) {
   return (
     <div className="cardWrapper">
       <div className="cardImage">
-        <img src={games.background_image} alt={games.name} />
+        <Link to={`/game/${games.name}`} state={{ results: games }}>
+          <img src={games.background_image} alt={games.name} />
+        </Link>
+
         <div
           className="cardAddButton"
           onClick={() => {

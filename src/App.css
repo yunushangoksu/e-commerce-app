@@ -311,3 +311,50 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
+/* Game Detail */
+.gameDetailWrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+.gameDetailSubWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 100px;
+  box-sizing: border-box;
+}
+.gameDetailImage {
+  object-fit: cover;
+  width: 60%;
+  height: 100%;
+}
+.gameDetailInfoWrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  flex-direction: column;
+  font-size: 1.2em;
+}
+.gameDetailName {
+  font-size: 2.3em;
+}
+.gameDetailDescription {
+  font-size: 1.2em;
+}
+.gameDetailRatingSection {
+  display: flex;
+  gap: 20px;
+}
+.gameDetailBackLink {
+  display: flex;
+  position: absolute;
+  margin: 30px 50px 0 50px;
+  color: black;
+  text-decoration: none;
+  font-size: 2em;
+}

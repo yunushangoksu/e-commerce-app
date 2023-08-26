@@ -10,7 +10,6 @@ function GameList({ cart, setCart }) {
     );
     const data = await res.json();
     setGames(data.results);
-    console.log(res);
   };
 
   useEffect(() => {
