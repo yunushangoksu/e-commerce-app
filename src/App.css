@@ -65,7 +65,10 @@ body {
   padding: 10px;
   border-radius: 10px;
   margin-right: 20px;
-  background-color: #c0c7e07c;
+  background-color: #222823;
+}
+.navbarCart img {
+  filter: invert(1);
 }
 .searchResults {
   display: none;
@@ -125,6 +128,35 @@ body {
 .homeNavbarRow:hover {
   background-color: rgb(190, 54, 54);
   border-radius: 10px;
+}
+.footer{
+  display: flex;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #575a5e;
+  background-color: #222823;
+  gap: 30px;
+}
+.footerText {
+  display: flex;
+  flex-direction: row;
+  gap: 6px
+  ;
+}
+.yunushan {
+  text-decoration: underline;
+    color: #f4f7f5;
+
+}
+.rawg {
+  letter-spacing: 5px;
+  text-decoration: underline;
+    color: #f4f7f5;
+
 }
 /* Cart */
 .cartWrapper {
