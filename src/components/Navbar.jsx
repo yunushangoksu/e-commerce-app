@@ -20,6 +20,7 @@ function Navbar() {
         if (response.ok) {
           return response.json();
         } else {
+          [];
         }
       })
       .then((data) => {
@@ -93,7 +94,7 @@ function Navbar() {
           document.querySelector("body").style.overflowY = "hidden";
         }}
       >
-        <img src="src/assets/icons8-cart-30.png" alt="Cart" />
+        <img src="icons8-cart-30.png" alt="Cart" />
       </div>
     </div>
   );

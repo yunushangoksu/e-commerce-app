@@ -46,7 +46,7 @@ function Card({ games, cart, setCart }) {
           }}
         >
           <img
-            src="src/assets/icons8-cart-30.png"
+            src="icons8-cart-30.png"
             alt="Cart"
             className="cardAddButtonImg"
           />

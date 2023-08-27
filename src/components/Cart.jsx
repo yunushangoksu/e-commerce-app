@@ -9,7 +9,7 @@ function Cart({ cart, setCart }) {
     <div className="cartWrapper">
       <div className="cartTopRow">
         <div>{cart ? cart.length : ""} Games</div>
-        <div onClick={() => setCart([])}>Clear</div>
+        <div onClick={() => setCart([])} className="cartClear">Clear</div>
       </div>
 
       {cart

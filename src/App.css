@@ -146,6 +146,9 @@ body {
   padding: 20px;
   justify-content: space-between;
 }
+.cartClear {
+  cursor: pointer;
+}
 .cartItemDelete {
   display: flex;
   color: #f4f7f5;
@@ -240,11 +243,11 @@ body {
 }
 .categoryRow:hover .categorySvg {
   transition: 0.5s;
-  filter: grayscale(1) invert(0);
+  filter:  grayscale(1);
+  background-color: #f4f7f5;
 }
 .categoryRow:not(:hover) .categorySvg {
   transition: 0.5s;
-  background-color: white;
   filter: invert(100%);
 }
 
