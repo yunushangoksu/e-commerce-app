@@ -27,7 +27,6 @@ function StorePages() {
       <div className="storePagesWrapper">
         <Navbar />
         <div className="subWrapper">
-          <Category />
           <GameList cart={cart} setCart={setCart} />
         </div>
       </div>

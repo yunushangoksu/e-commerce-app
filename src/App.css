@@ -15,6 +15,7 @@ body {
 /* Navbar */
 .navbarWrapper {
   display: flex;
+  color: #f4f7f5;
   font-size: 24px;
   align-items: center;
   justify-content: space-between;
@@ -27,7 +28,15 @@ body {
   font-size: 48px;
   padding-left: 10px;
   text-decoration: none;
-  color: black;
+  color: #f4f7f5;
+}
+.navbarLogo:hover {
+  transition: 0.5s;
+  transform: scale(1.05);
+}
+.navbarLogo:not(:hover) {
+  transition: 0.5s;
+  transform: scale(1);
 }
 
 .navbarSearchBar input {
@@ -61,10 +70,9 @@ body {
 .searchResults {
   display: none;
   margin-top: 5px;
-  align-items: center;
   justify-content: space-between;
   gap: 20px;
-  flex-direction: row;
+  flex-direction: column;
   position: absolute;
   background-color: white;
   border: solid black 3px;
@@ -72,10 +80,22 @@ body {
   padding: 10px;
   width: 390px;
 }
+.searchResultsSubWrapper {
+  display: flex;
+  color: #08090a;
+  background-color: #08090a
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-between;
+}
+.searchResultsSubWrapper:hover {
+  background-color: #575a5e;
+  color: #f4f7f5;
+}
 .searchResultsItemWrapper {
   height: 25px;
 }
-.searchResultsItemWrapperdItemLeft img {
+.searchResultsItemWrapperItemLeft img {
   width: 100px;
 }
 /* Home Page */
@@ -92,17 +112,17 @@ body {
   flex-direction: column;
   gap: 1em;
   font-size: 2em;
-  background-color: antiquewhite;
+  background-color: #222823;
   padding: 20px;
   border-radius: 1em;
 }
 .homeNavbarRow {
-  color: black;
+  color: #f4f7f5;
   text-decoration: none;
   padding: 10px;
 }
 .homeNavbarRow:hover {
-  background-color: rgb(126, 107, 107);
+  background-color: rgb(190, 54, 54);
   border-radius: 10px;
 }
 /* Cart */
@@ -117,7 +137,8 @@ body {
   margin-right: -22em;
   height: 100%;
   width: 22em;
-  background-color: #f1f7ed;
+  color: #f1f7ed;
+  background-color: #121312;
   font-family: "Roboto", sans-serif;
 }
 .cartTopRow {
@@ -127,7 +148,7 @@ body {
 }
 .cartItemDelete {
   display: flex;
-  color: white;
+  color: #f4f7f5;
   align-items: center;
   justify-content: center;
   background-color: #555968;
@@ -141,16 +162,15 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 10em;
-  margin: 20px;
-
-  color: #050609;
-  background-color: #f1f7ed;
-  box-shadow: 0.5rem 0.5rem 0 0 #555968;
+  margin: 10px;
+  color: #f4f7f5;
+  background-color: #222823;
   border: solid black 5px;
   border-radius: 1.4em;
 }
 .cartItemName {
   font-size: 1.4em;
+  align-self: start;
 }
 .cardItemLeft {
   display: flex;
@@ -166,17 +186,22 @@ body {
 }
 .cartItemRight {
   display: flex;
-  margin: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
   align-items: end;
-  justify-content: space-around;
   flex-direction: column;
   height: 100%;
+  width: 100%;
+  flex-grow: 0;
   gap: 5px;
 }
 .cartItemRight2 {
   display: flex;
   align-items: end;
+  justify-content: space-around;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
   gap: 10px;
 }
 .cartOutside {
@@ -191,6 +216,7 @@ body {
 /* Category */
 .categoryWrapper {
   display: flex;
+  color: #f4f7f5;
   padding-top: 20px;
   gap: 20px;
   flex-direction: column;
@@ -238,6 +264,7 @@ body {
 }
 .shopHeader {
   font-size: 72px;
+  color: #f4f7f5;
   font-weight: bolder;
   padding-bottom: 18px;
 }
@@ -247,12 +274,48 @@ body {
   gap: 30px;
   grid-template-columns: repeat(4, 1fr);
 }
+.shopLoading {
+}
+
+.shopLoadingCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transform: translateZ(1px);
+}
+.shopLoadingCircle > div {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  background: #f4f7f5;
+  animation: shopLoadingCircle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes shopLoadingCircle {
+  0%,
+  100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateY(3600deg);
+  }
+}
+
 /* Card */
 .cardWrapper {
   max-width: 700px;
-  color: #050609;
-  background-color: #f1f7ed;
-  box-shadow: 0.5rem 0.5rem 0 0 #555968;
+  color: #f4f7f5;
+  background-color: #08090a;
+  box-shadow: 0.5rem 0.5rem 0 0 #222823;
   border: solid black 5px;
   border-radius: 1.4em;
 }
@@ -268,7 +331,7 @@ body {
   position: relative;
   max-width: 700px;
 }
-.cardImage img {
+.cardImageImg {
   width: 100%;
   max-width: 700px;
   height: 200px;
@@ -289,7 +352,26 @@ body {
   justify-content: center;
   width: 50px;
   height: 50px;
-  background-color: rgba(138, 218, 20);
+  background-color: #08090a;
+  border-radius: 1rem;
+}
+.cardAddButtonImg {
+  filter: invert(1);
+  transform: scale(0.8);
+}
+.cardAddButtonAdded {
+  margin: 10px;
+  float: right;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(9, 104, 9);
   border-radius: 1rem;
 }
 .cardName {
@@ -300,7 +382,7 @@ body {
   height: 100px;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #f1f7ed;
+  background-color: #222823;
   border-radius: 0 0 1rem 1rem;
 }
 .cardDescriptionWrapper > div {
@@ -332,6 +414,8 @@ body {
   object-fit: cover;
   width: 60%;
   height: 100%;
+  border: solid black 3px;
+  border-radius: 2em;
 }
 .gameDetailInfoWrapper {
   display: flex;
@@ -342,19 +426,148 @@ body {
 }
 .gameDetailName {
   font-size: 2.3em;
+  color: #f4f7f5;
 }
 .gameDetailDescription {
   font-size: 1.2em;
+  padding-top: 15px;
+  overflow-y: auto;
+  height: 100%;
+  color: #a7a2a9;
 }
 .gameDetailRatingSection {
   display: flex;
   gap: 20px;
+  color: #a7a2a9;
 }
 .gameDetailBackLink {
   display: flex;
+  font-family: "Roboto", sans-serif;
   position: absolute;
   margin: 30px 50px 0 50px;
-  color: black;
+  color: #f4f7f5;
   text-decoration: none;
   font-size: 2em;
+}
+.gameDetailLoading {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  background-color: #08090a;
+  width: 100%;
+  height: 100%;
+}
+.gameDetailLoadingFadeOut {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  background-color: #08090a;
+  width: 100%;
+  height: 100%;
+  animation: fadeout 0.6s linear forwards;
+}
+.gameDetailRoller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.gameDetailRoller div {
+  animation: gameDetailRoller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.gameDetailRoller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f4f7f5;
+  margin: -4px 0 0 -4px;
+}
+.gameDetailRoller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.gameDetailRoller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.gameDetailRoller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.gameDetailRoller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.gameDetailRoller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.gameDetailRoller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.gameDetailRoller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.gameDetailRoller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.gameDetailRoller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.gameDetailRoller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.gameDetailRoller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.gameDetailRoller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.gameDetailRoller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.gameDetailRoller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.gameDetailRoller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.gameDetailRoller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes gameDetailRoller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+. {
+  color: #08090a;
+  color: #a7a2a9;
+  color: #f4f7f5;
+  color: #575a5e;
+  color: #222823;
 }

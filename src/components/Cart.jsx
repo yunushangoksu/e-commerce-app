@@ -27,7 +27,7 @@ function Cart({ cart, setCart }) {
                 </div>
                 <div className="cartItemRight2">
                   <div className="cartItemName">{game.name}</div>
-                  <div>19.98</div>
+                  <div>19.98$</div>
                 </div>
               </div>
             </div>

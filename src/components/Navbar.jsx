@@ -1,34 +1,40 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Navbar() {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
 
   const handleChange = (e) => {
+    document.querySelector(".searchResults").style.display = "flex";
     setSearchTerm(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const fetchData = async () => {
     let slug = searchTerm.split(" ").join("-").toLocaleLowerCase();
     setResults([]);
     await fetch(
-      `https://api.rawg.io/api/games/${slug}?key=758f797c3db7418e8ce75ca4625d31f6`
+      `https://api.rawg.io/api/games?key=758f797c3db7418e8ce75ca4625d31f6&search=${slug}&page_size=5`
     )
       .then((response) => {
         if (response.ok) {
           return response.json();
         } else {
-          console.log("not found");
         }
       })
       .then((data) => {
-        setResults(data);
-        document.querySelector(".searchResults").style.display = "flex";
+        setResults(data.results);
       });
-    setSearchTerm("");
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    document.querySelector(".searchResults").style.display = "flex";
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [searchTerm]);
 
   return (
     <div className="navbarWrapper">
@@ -42,38 +48,42 @@ function Navbar() {
           placeholder="Search"
           value={searchTerm}
           onChange={handleChange}
-          /*           onBlur={() =>
-            (document.querySelector(".searchResults").style.display = "none")
-          } */
           className="searchBarInput"
+          /*           onBlur={() => {
+            let myInterval = setInterval(() => {
+              document.querySelector(".searchResults").style.display = "none";
+            }, 100);
+            clearInterval(myInterval);
+          }} */
         />
-        {results ? (
-          <Link
-            to={`/game/${results.name}`}
-            state={{ results: results }}
-            className="searchResults"
-          >
-            <div className="searchResultsItemWrapperdItemLeft">
-              <img src={results.background_image} alt={results.name} />
-            </div>
-            <div className="searchResultsItemRight">
-              <div className="searchResultsItemRight2">
-                <div className="searchResultsItemName">{results.name}</div>
-                <div>19.98$</div>
+
+        <div className="searchResults">
+          {results.map((data, index) => (
+            <Link
+              to={`/game/${data.name}`}
+              state={{ results: data }}
+              key={index}
+              className="searchResultsSubWrapper"
+            >
+              <div className="searchResultsItemWrapperItemLeft">
+                <img src={data.background_image} alt={data.name} />
               </div>
-            </div>
-          </Link>
-        ) : (
-          <div className="searchResults">
-            <div className="searchResultsItemRight">
-              <div className="searchResultsItemRight2">
-                <div className="searchResultsItemName">
-                  {"Nothing found :("}
+              <div className="searchResultsItemRight">
+                <div className="searchResultsItemRight2">
+                  <div className="searchResultsItemName">{data.name}</div>
+                  <div>19.98$</div>
                 </div>
               </div>
+            </Link>
+          ))}
+        </div>
+        {/*         <div className="searchResults">
+          <div className="searchResultsItemRight">
+            <div className="searchResultsItemRight2">
+              <div className="searchResultsItemName">{"Nothing found :("}</div>
             </div>
           </div>
-        )}
+        </div> */}
       </form>
       <div
         className="navbarCart"
