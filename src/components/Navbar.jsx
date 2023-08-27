@@ -50,12 +50,15 @@ function Navbar() {
           value={searchTerm}
           onChange={handleChange}
           className="searchBarInput"
-          /*           onBlur={() => {
-            let myInterval = setInterval(() => {
-              document.querySelector(".searchResults").style.display = "none";
-            }, 100);
-            clearInterval(myInterval);
-          }} */
+          onBlur={() => {
+            setTimeout(
+              () =>
+                (document.querySelector(".searchResults").style.display =
+                  "none"),
+              100
+            );
+          }}
+          onFocus={handleChange}
         />
 
         <div className="searchResults">
