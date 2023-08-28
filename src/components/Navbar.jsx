@@ -81,13 +81,6 @@ function Navbar() {
             </Link>
           ))}
         </div>
-        {/*         <div className="searchResults">
-          <div className="searchResultsItemRight">
-            <div className="searchResultsItemRight2">
-              <div className="searchResultsItemName">{"Nothing found :("}</div>
-            </div>
-          </div>
-        </div> */}
       </form>
       <div
         className="navbarCart"

@@ -1,4 +1,3 @@
-import Category from "../components/Category";
 import Navbar from "../components/Navbar";
 import GameList from "../components/GameList";
 import Cart from "../components/Cart";

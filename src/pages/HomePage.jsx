@@ -1,5 +1,4 @@
 import HomeCategoryNavbar from "../components/HomeNavbar";
-import { useState, useEffect } from "react";
 
 function HomePage() {
   return (

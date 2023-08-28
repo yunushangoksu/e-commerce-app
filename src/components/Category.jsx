@@ -1,34 +1,6 @@
 function Category({ fetchApiSetter }) {
   return (
     <div className="categoryWrapper">
-      {/* 
-      <div className="categoryBlock">
-        <div className="categoryHeader">New Releases</div>
-        <div className="categoryRow">
-          <img
-            src="icons8-star-48.png"
-            alt=""
-            className="categorySvg"
-          />
-          Last 30 days
-        </div>
-        <div className="categoryRow">
-          <img
-            src="icons8-gas-48.png"
-            alt=""
-            className="categorySvg"
-          />
-          This week
-        </div>
-        <div className="categoryRow">
-          <img
-            src="icons8-fast-forward-48.png"
-            alt=""
-            className="categorySvg"
-          />
-          Next Week
-        </div>
-      </div> */}
       <div className="categoryBlock">
         <div className="categoryHeader">Top</div>
         <div
