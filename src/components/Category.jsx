@@ -1,4 +1,4 @@
-function Category({ fetchApiSetter }) {
+function Category({ fetchApiSetter, headerSetter }) {
   return (
     <div className="categoryWrapper">
       <div className="categoryBlock">
@@ -9,6 +9,7 @@ function Category({ fetchApiSetter }) {
             fetchApiSetter(
               "https://api.rawg.io/api/games?key=758f797c3db7418e8ce75ca4625d31f6&dates=2019-09-01,2019-09-30&platforms=18,1,7"
             );
+            headerSetter("Best of the year");
           }}
         >
           <img src="icons8-trophy-48.png" alt="" className="categorySvg" />
@@ -20,6 +21,7 @@ function Category({ fetchApiSetter }) {
             fetchApiSetter(
               "https://api.rawg.io/api/games?key=758f797c3db7418e8ce75ca4625d31f6&dates=2022-01-01,2022-01-30&platforms=18,1,7"
             );
+            headerSetter("Popular in 2022");
           }}
         >
           <img src="icons8-statistics-48.png" alt="" className="categorySvg" />
@@ -31,6 +33,7 @@ function Category({ fetchApiSetter }) {
             fetchApiSetter(
               "https://api.rawg.io/api/games?key=758f797c3db7418e8ce75ca4625d31f6&metacritic=92,100"
             );
+            headerSetter("All time top");
           }}
         >
           <img src="icons8-crown-48.png" alt="" className="categorySvg" />
@@ -45,6 +48,7 @@ function Category({ fetchApiSetter }) {
             fetchApiSetter(
               "https://api.rawg.io/api/games?key=758f797c3db7418e8ce75ca4625d31f6&platforms=4"
             );
+            headerSetter("PC");
           }}
         >
           <img src="icons8-windows.svg" alt="" className="categorySvg" />
@@ -56,6 +60,7 @@ function Category({ fetchApiSetter }) {
             fetchApiSetter(
               "https://api.rawg.io/api/games?key=758f797c3db7418e8ce75ca4625d31f6&platforms=187,18,16"
             );
+            headerSetter("PlayStation");
           }}
         >
           <img src="icons8-playstation-32.png" alt="" className="categorySvg" />
@@ -67,6 +72,7 @@ function Category({ fetchApiSetter }) {
             fetchApiSetter(
               "https://api.rawg.io/api/games?key=758f797c3db7418e8ce75ca4625d31f6&platforms=1,186,14"
             );
+            headerSetter("Xbox");
           }}
         >
           <img src="icons8-xbox.svg" alt="" className="categorySvg" />
@@ -78,6 +84,7 @@ function Category({ fetchApiSetter }) {
             fetchApiSetter(
               "https://api.rawg.io/api/games?key=758f797c3db7418e8ce75ca4625d31f6&platforms=7"
             );
+            headerSetter("Nintendo Switch");
           }}
         >
           <img
@@ -93,6 +100,7 @@ function Category({ fetchApiSetter }) {
             fetchApiSetter(
               "https://api.rawg.io/api/games?key=758f797c3db7418e8ce75ca4625d31f6&platforms=3"
             );
+            headerSetter("IOS");
           }}
         >
           <img src="icons8-ios.svg" alt="" className="categorySvg" />
@@ -104,6 +112,7 @@ function Category({ fetchApiSetter }) {
             fetchApiSetter(
               "https://api.rawg.io/api/games?key=758f797c3db7418e8ce75ca4625d31f6&platforms=21"
             );
+            headerSetter("Android");
           }}
         >
           <img src="icons8-android.svg" alt="" className="categorySvg" />
